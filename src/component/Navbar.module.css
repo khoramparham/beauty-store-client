@@ -1,0 +1,186 @@
+.active {
+  color: #ff2d55 !important;
+  font-weight: 700;
+  background: rgba(255, 45, 85, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(255, 45, 85, 0.08);
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-image: linear-gradient(to right, #ff2d55, #ff6b6b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* fallback for non-webkit browsers */
+  color: transparent;
+}
+
+.logoImage {
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-left: 0.75rem;
+}
+
+.desktopMenu {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .desktopMenu {
+    display: flex;
+  }
+}
+
+.menuLink {
+  color: #374151;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.iconsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.cartContainer {
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  background: linear-gradient(to right, #ff2d55, #ff6b6b);
+  color: white;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.menuToggle {
+  display: block;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.menuToggle:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.08);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .menuToggle {
+    display: none;
+  }
+}
+
+/* مدل جدید: bottom navigation */
+.mobileMenu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 0;
+  /* همیشه پایین صفحه و روی همه عناصر */
+  will-change: transform;
+  touch-action: none;
+}
+
+.mobileMenuNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.mobileMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.mobileMenuItem:active,
+.mobileMenuItem:focus {
+  color: #ff2d55;
+}
+.mobileMenuIcon {
+  font-size: 1.3rem;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileMenu .nav {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileMenuLink {
+  padding: 0.5rem 0;
+  font-weight: 600;
+  text-decoration: none;
+  color: #374151;
+}

@@ -1,0 +1,399 @@
+.productGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+  }
+}
+
+/* Image Gallery */
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainImageContainer {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  perspective: 1000px;
+  position: relative;
+}
+
+.mainImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.imageTransition {
+  transition: opacity 0.2s ease;
+}
+
+.thumbnailGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.thumbnailBtn {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: none;
+  padding: 0;
+}
+
+.thumbnailBtn:hover {
+  border-color: #60a5fa;
+}
+
+.thumbnailBtn img {
+  width: 100%;
+  height: 6rem;
+  object-fit: cover;
+}
+
+.thumbnailActive {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Product Info */
+.productSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoCard {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.productTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.productBrand {
+  font-size: 1.125rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+/* Badges */
+.badgesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+}
+
+.badgeInactive {
+  background: #fee2e2;
+  color: #991b1b;
+  position: relative;
+  overflow: hidden;
+}
+
+.badgeInactive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.badgeActive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+@keyframes shimmer {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.badgeStock {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pulseBadge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Price Card */
+.priceCard {
+  background: #f9fafb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.priceCurrent {
+  color: var(--primary);
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.priceOriginal {
+  font-size: 1.25rem;
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+.discountBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  margin-right: auto;
+}
+
+/* Stock Info */
+.stockInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stockDetails {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stockText {
+  display: flex;
+  flex-direction: column;
+}
+
+.stockLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.stockValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.stockBar {
+  width: 8rem;
+  background: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.75rem;
+  min-width: 8rem;
+}
+
+.stockBarFill {
+  background: #10b981;
+  height: 0.75rem;
+  border-radius: 9999px;
+  width: 85%;
+}
+
+/* Description */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.descriptionText {
+  color: #4b5563;
+  line-height: 1.75;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* Additional Info */
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .infoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.infoItem {
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.infoLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+}
+
+.infoValue {
+  color: #111827;
+  font-size: 0.875rem;
+  margin: 0;
+  word-break: break-all;
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btnDisabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btnOutline {
+  background-color: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btnOutline:hover {
+  background-color: #eff6ff;
+}
+
+/* Animation */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 1rem;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.retryButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.retryButton:hover {
+  background-color: #2563eb;
+}

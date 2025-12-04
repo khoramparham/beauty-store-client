@@ -1,0 +1,219 @@
+.productLoaderContainer {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 20px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.loadingText {
+  font-size: 17px;
+  color: #ff2d55;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(255, 45, 85, 0.1);
+  animation: fadeInOut 2.5s ease-in-out infinite;
+}
+
+/* استایل‌های LoaderRing */
+.ringContainer {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outerRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 45, 85, 0.1);
+  box-shadow: 0 0 20px rgba(255, 45, 85, 0.1);
+}
+
+.middleRing {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top: 3px solid #ff2d55;
+  border-bottom: 3px solid #ff2d55;
+  animation: rotate 2s linear infinite;
+}
+
+.innerRing {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-left: 2px solid #ff6b6b;
+  border-right: 2px solid #ff6b6b;
+  animation: rotateReverse 1.5s linear infinite;
+}
+
+.flowerContainer {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.flowerBase {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.petal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ff2d55;
+  border-radius: 50% 50% 0 50%;
+  opacity: 0.8;
+}
+
+.flowerCenter {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ff6b6b;
+  border-radius: 50%;
+  top: 11px;
+  left: 11px;
+}
+
+/* استایل‌های LoaderBars */
+.barsContainer {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.bar {
+  width: 6px;
+  height: 20px;
+  border-radius: 3px;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.bar1 {
+  background-color: #ff2d55;
+  animation-delay: 0s;
+}
+
+.bar2 {
+  background-color: #ff6b6b;
+  animation-delay: 0.2s;
+}
+
+.bar3 {
+  background-color: #ff9e9e;
+  animation-delay: 0.4s;
+}
+
+/* استایل‌های LoaderProgress */
+.progressContainer {
+  width: 120px;
+  height: 4px;
+  background-color: rgba(255, 107, 107, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background-color: #ff2d55;
+  border-radius: 2px;
+  animation: progress 2s ease-in-out infinite;
+}
+
+/* انیمیشن‌ها */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateReverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 40%;
+    transform: translateX(-100%);
+  }
+  50% {
+    width: 60%;
+    transform: translateX(60px);
+  }
+  100% {
+    width: 40%;
+    transform: translateX(120px);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
