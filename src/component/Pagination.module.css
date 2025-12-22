@@ -1,0 +1,175 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pages {
+  display: flex;
+  gap: 4px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.button:disabled,
+.buttonActive:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button:not(:disabled):hover {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.buttonActive {
+  background-color: #ff2d55;
+  color: white;
+  border-color: #ff2d55;
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.3);
+}
+
+.buttonActive:disabled {
+  background-color: #ff2d55;
+  color: white;
+  opacity: 0.8;
+}
+
+.buttonActive:not(:disabled):hover {
+  background-color: #ff2d55;
+  border-color: #ff2d55;
+}
+
+.navButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navButton:not(:disabled):hover {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.navButton:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.ellipsis {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 14px;
+  user-select: none;
+}
+
+.info {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 16px;
+  }
+
+  .button,
+  .navButton {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .content {
+    gap: 4px;
+  }
+}
+
+/* تم تاریک */
+@media (prefers-color-scheme: dark) {
+  .button {
+    color: #e5e7eb;
+  }
+
+  .button:not(:disabled):hover {
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+
+  .navButton {
+    color: #e5e7eb;
+  }
+
+  .navButton:not(:disabled):hover {
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+
+  .buttonActive {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  .buttonActive:not(:disabled):hover {
+    background-color: #2563eb;
+  }
+
+  .ellipsis {
+    color: #9ca3af;
+  }
+
+  .info {
+    color: #9ca3af;
+  }
+}

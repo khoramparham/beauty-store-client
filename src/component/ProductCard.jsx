@@ -4,7 +4,7 @@ import { Heart, ShoppingCart } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product, fav, setFav }) => {
-  const id = product._id || product.id;
+  // const id = product._id || product.id;
   const navigate = useNavigate();
 
   const handleCardClick = () => {
@@ -18,7 +18,7 @@ const ProductCard = ({ product, fav, setFav }) => {
           alt={product.name || product.title}
           className={style.productImage}
         />
-        <button
+        {/* <button
           className={fav.includes(id) ? `${style.favBtn} ${style.active}` : style.favBtn}
           onClick={() =>
             setFav(fav.includes(id) ? fav.filter((f) => f !== id) : [...fav, id])
@@ -26,7 +26,7 @@ const ProductCard = ({ product, fav, setFav }) => {
           aria-label="افزودن به علاقه‌مندی"
         >
           <Heart size={18} />
-        </button>
+        </button> */}
       </div>
       <div className={style.productBody}>
         <div className={style.productTitle}>{product.name || product.title}</div>
