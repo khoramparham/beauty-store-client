@@ -5,17 +5,30 @@ import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailsPage";
-
+import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./component/ProtectedRoute";
+import { AuthProvider } from "./context/AuthContext";
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/product" element={<ProductPage />} />
-        <Route path="/product/:id" element={<ProductDetailPage />} />
-      </Route>
-      <Route path="/*" element={<NotFound />} />
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/login"
+            element={
+              <ProtectedRoute requireAuth={false}>
+                <LoginPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </AuthProvider>
   );
 }
 
